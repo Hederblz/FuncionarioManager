@@ -1,9 +1,13 @@
 <?php
 
 
+use Dompdf\Dompdf;
+
 require_once 'Models/FuncionarioModel.php';
 require_once 'Models/CargoModel.php';
 require_once 'CargoController.php';
+require_once 'dompdf/autoload.inc.php';
+
 
 
 class FuncionarioController extends Banco{
@@ -194,6 +198,42 @@ class FuncionarioController extends Banco{
             }
             Application::redirect('ViewController.php?controle=Funcionario&acao=listarFuncionarios');
         }
+    }
+
+    public function imprimirFuncionarioAction(){
+        $sql_query = "SELECT * FROM tbFuncionario";
+
+        $link = $this->conecta_mysql();
+            try {
+                $data = mysqli_query($link, $sql_query);
+            } catch (mysqli_sql_exception $e) {
+                die($e->getMessage());
+            }
+    
+        if($data->num_rows > 0){
+           $html = "<table width=80% border=1>";
+            while($funcionario_data = $data->fetch_object()){
+                $html .= "<tr>";
+                $html .= "<td>".$funcionario_data->idtbFuncionario."</td>";
+                $html .= "<td>".$funcionario_data->Nome."</td>";
+                $html .= "<td>".$funcionario_data->Sobrenome."</td>";
+                $html .= "<td>".$funcionario_data->DataNascimento."</td>";
+                $html .= "<td>".$funcionario_data->Salario."</td>";
+                $html .= "</tr>";
+            }
+            $html .= "</table>";
+        }else{
+            $menssagem = "Nenhum funcionario registrado";
+            Application::redirect("ErroPage.php?menssagem=" . $menssagem);
+            die();
+        }
+        
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper('A4', 'portrait');
+        $dompdf->render();
+        $dompdf->stream();
+    
     }
 
 }
