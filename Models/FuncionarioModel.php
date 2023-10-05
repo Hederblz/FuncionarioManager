@@ -8,6 +8,7 @@ class FuncionarioModel{
     private $id;
     private $nome;
     private $sobrenome;
+    private $dataNascimento;
     private $salario;
     private $codCargo;
 
@@ -39,6 +40,16 @@ class FuncionarioModel{
     public function getSobrenome()
     {
         return $this->sobrenome;
+    }
+
+    public function setDataNascimento($dataNascimento)
+    {
+        $this->dataNascimento = $dataNascimento;
+    }
+
+    public function getDataNascimento()
+    {
+        return $this->dataNascimento;
     }
 
     public function setSalario($salario)

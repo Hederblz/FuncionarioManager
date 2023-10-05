@@ -26,6 +26,9 @@ $v_funcionario = $v_params['v_funcionarios'];
                     Sobrenome
                 </th>
                 <th>
+                    Data
+                </th>
+                <th>
                     Salario
                 </th>
                 <th colspan="3">
@@ -44,6 +47,9 @@ $v_funcionario = $v_params['v_funcionarios'];
                     </td>
                     <td>
                         <?php echo $funcionario->getSobrenome() ?>
+                    </td>
+                    <td>
+                        <?php echo $funcionario->getDataNascimento() ?>
                     </td>
                     <td>
                         <?php echo $funcionario->getSalario() ?>

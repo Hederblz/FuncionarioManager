@@ -26,6 +26,9 @@ $v_cargos = $v_params["v_cargos"];
                         Sobrenome
                     </th>
                     <th>
+                        Data de Nascimento
+                    </th>
+                    <th>
                         Salario
                     </th>
                     <th>
@@ -41,6 +44,9 @@ $v_cargos = $v_params["v_cargos"];
                     </td>
                     <td>
                         <input type='text' name='sobrenome' value='<?php echo $funcionario->getSobrenome(); ?>' required>
+                    </td>
+                    <td>
+                    <input type="date" name="dataNascimento" value="<?php echo $funcionario->getDataNascimento(); ?>" required>
                     </td>
                     <td>
                     <input type="text" name="salario" value="<?php echo $funcionario->getSalario(); ?>"

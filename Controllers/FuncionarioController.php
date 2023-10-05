@@ -27,6 +27,7 @@ class FuncionarioController extends Banco{
         $FuncionarioModel->setId($Funcionario->idtbFuncionario);
         $FuncionarioModel->setNome($Funcionario->Nome);
         $FuncionarioModel->setSobrenome($Funcionario->Sobrenome);
+        $FuncionarioModel->setDataNascimento($Funcionario->DataNascimento);
         $FuncionarioModel->setSalario($Funcionario->Salario);
         $FuncionarioModel->setCodCargo($CargoModel->getId());
 
@@ -49,6 +50,7 @@ class FuncionarioController extends Banco{
             $funcionario_model->setId($funcionario_data->idtbFuncionario);
             $funcionario_model->setNome($funcionario_data->Nome);
             $funcionario_model->setSobrenome($funcionario_data->Sobrenome);
+            $funcionario_model->setDataNascimento($funcionario_data->DataNascimento);
             $funcionario_model->setSalario($funcionario_data->Salario);
             array_push($v_funcionarios, $funcionario_model);
         }
@@ -74,6 +76,7 @@ class FuncionarioController extends Banco{
         if(count($_POST) > 0){
             $FuncionarioModel->setNome($_POST['nome']);
             $FuncionarioModel->setSobrenome($_POST['sobrenome']);
+            $FuncionarioModel->setDataNascimento($_POST['dataNascimento']);
             $FuncionarioModel->setSalario($_POST['salario']);
             $FuncionarioModel->setCodCargo($_POST['cargo']);
 
@@ -142,6 +145,7 @@ class FuncionarioController extends Banco{
         $id = $FuncionarioModel->getId();
         $nome = $FuncionarioModel->getNome();
         $sobrenome = $FuncionarioModel->getSobrenome();
+        $dataNascimento = $FuncionarioModel->getDataNascimento();
         $salario = $FuncionarioModel->getSalario();
         $CodCargo = $FuncionarioModel->getCodCargo();
 
@@ -150,16 +154,18 @@ class FuncionarioController extends Banco{
             (
                 `Nome`, 
                 `Sobrenome`,
+                `DataNascimento`,
                 `Salario`, 
                 `CodTbCargo`
             ) 
-            VALUES ('$nome', '$sobrenome', '$salario', '$CodCargo')";
+            VALUES ('$nome', '$sobrenome', '$dataNascimento', '$salario', '$CodCargo')";
         else{
             $sql_query = "UPDATE
                             `tbFuncionario`
                         SET
                             `Nome` = '$nome',
                             `Sobrenome` = '$sobrenome',
+                            `DataNascimento` = '$dataNascimento',
                             `Salario` = '$salario',
                             `CodTbCargo` = $CodCargo
                         WHERE `idtbFuncionario` = $id";
