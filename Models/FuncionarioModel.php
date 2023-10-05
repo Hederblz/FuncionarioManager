@@ -77,11 +77,12 @@ class FuncionarioModel{
         $dataAtual = new DateTime();
         // Converter a data de nascimento (no formato MySQL) para um objeto DateTime
         $dataNascimento = DateTime::createFromFormat('Y-m-d', $dataNascimento);
-        // Verificar se a data de nascimento coincide com a data atual (desconsiderando o ano)
-        if ($dataNascimento->format('m-d') === $dataAtual->format('m-d')) {
+        // Verificar se o mês de aniversário coincide com o mês atual
+        if ($dataNascimento->format('m') === $dataAtual->format('m')) {
             return "Parabéns por mais um ano de vida, Tenhas um dia repleto de felicidades.";
         } else {
-            return ""; // Nenhuma mensagem se não for aniversário
+            return ""; // Nenhuma mensagem se não for aniversário no mês atual
         }
     }
+    
 }
