@@ -212,6 +212,23 @@ class FuncionarioController extends Banco{
     
         if($data->num_rows > 0){
            $html = "<table width=80% border=1>";
+                    $html .= "<tr>";
+                    $html .= "<th>";
+                    $html .= "ID";
+                        $html .= "</th>";
+                    $html .= "<th>";
+                    $html .= "Nome";
+                        $html .= "</th>";
+                    $html .= "<th>";
+                    $html .= "Sobrenome";
+                        $html .= "</th>";
+                    $html .= "<th>";
+                    $html .= "Data";
+                        $html .= "</th>";
+                    $html .= "<th>";
+                    $html .= "Salario";
+                        $html .= "</th>";
+                    $html .= "</tr>";
             while($funcionario_data = $data->fetch_object()){
                 $html .= "<tr>";
                 $html .= "<td>".$funcionario_data->idtbFuncionario."</td>";
