@@ -50,7 +50,7 @@ $v_cargos = $v_params["v_cargos"];
                     </td>
                     <td>
                     <input type="text" name="salario" value="<?php echo $funcionario->getSalario(); ?>"
-                    pattern="^\d+(\.\d{1,2})?$" step="0.01" required min="0">
+                    pattern="^\d+(\.\d{1,2})?$" step="0.01" required min="0" max="9999999.99">
                     </td>
                     <td>
                         <select name="cargo">

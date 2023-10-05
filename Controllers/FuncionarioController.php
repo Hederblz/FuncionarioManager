@@ -195,4 +195,5 @@ class FuncionarioController extends Banco{
             Application::redirect('ViewController.php?controle=Funcionario&acao=listarFuncionarios');
         }
     }
+
 }

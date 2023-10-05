@@ -31,6 +31,9 @@ $v_funcionario = $v_params['v_funcionarios'];
                 <th>
                     Salario
                 </th>
+                <th>
+                    Mensagem
+                </th>
                 <th colspan="3">
                     Ações
                 </th>
@@ -53,6 +56,9 @@ $v_funcionario = $v_params['v_funcionarios'];
                     </td>
                     <td>
                         <?php echo $funcionario->getSalario() ?>
+                    </td>
+                    <td align="center">
+                    <?php echo $funcionario->verificarAniversario($funcionario->getDataNascimento()) ?>
                     </td>
                     <td align="center">
                         <a href='ViewController.php?controle=Funcionario&acao=cadastraFuncionario&id=<?php echo $funcionario->getId() ?>'>Editar</a>

@@ -71,4 +71,17 @@ class FuncionarioModel{
     {
         return $this->codCargo;
     }
+
+    public function verificarAniversario($dataNascimento) {
+        // Obter a data atual
+        $dataAtual = new DateTime();
+        // Converter a data de nascimento (no formato MySQL) para um objeto DateTime
+        $dataNascimento = DateTime::createFromFormat('Y-m-d', $dataNascimento);
+        // Verificar se a data de nascimento coincide com a data atual (desconsiderando o ano)
+        if ($dataNascimento->format('m-d') === $dataAtual->format('m-d')) {
+            return "Parabéns por mais um ano de vida, Tenhas um dia repleto de felicidades.";
+        } else {
+            return ""; // Nenhuma mensagem se não for aniversário
+        }
+    }
 }
