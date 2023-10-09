@@ -5,7 +5,7 @@ $menssagem = $_GET["menssagem"];
 ?>
 <html lang="en">
 
-<?php include "Views/head.php"; ?>
+<?php include "Views/Head.php"; ?>
 
 <body>
     <?php include "Views/menu.php"; ?>

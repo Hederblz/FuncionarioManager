@@ -1,5 +1,5 @@
 <html>
-    <?php include "head.php"; ?>
+    <?php include "Head.php"; ?>
 
 <!DOCTYPE html>
 
@@ -10,7 +10,7 @@
 
 <html lang="en">
 
-    <?php include "head.php"; ?>
+    <?php include "Head.php"; ?>
 <body>
     <?php include "menu.php"; ?>
 

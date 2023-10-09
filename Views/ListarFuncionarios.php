@@ -1,5 +1,5 @@
 <html>
-<?php include "head.php"; ?>
+<?php include "Head.php"; ?>
 
 <!DOCTYPE html>
 

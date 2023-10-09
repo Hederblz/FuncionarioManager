@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php include "head.php"; ?>
+<?php include "Head.php"; ?>
 <?php
 $v_params = $this->getParams();
 $funcionario = $v_params["funcionario"];

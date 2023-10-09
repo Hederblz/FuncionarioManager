@@ -6,7 +6,7 @@ $CargoModel = $v_params["CargoModel"];
 ?>
 <html lang="en">
 
-<?php include "head.php"; ?>
+<?php include "Head.php"; ?>
 
 <body>
     <?php include "menu.php"; ?>
