@@ -5,8 +5,8 @@ class Autoloader
 {
     public static function load($class)
     {
-        if (file_exists('lib/' . $class . '.php'))
-            require_once 'lib/' . $class . '.php';
+        if (file_exists('Lib/' . $class . '.php'))
+            require_once 'Lib/' . $class . '.php';
     }
 }
 

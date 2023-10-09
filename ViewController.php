@@ -1,5 +1,5 @@
 <?php
 
-require_once 'lib/Application.php';
+require_once 'Lib/Application.php';
 $Application = new Application();
 $Application->dispatch();
