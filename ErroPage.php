@@ -5,10 +5,10 @@ $menssagem = $_GET["menssagem"];
 ?>
 <html lang="en">
 
-<?php include "views/head.php"; ?>
+<?php include "Views/head.php"; ?>
 
 <body>
-    <?php include "views/menu.php"; ?>
+    <?php include "Views/menu.php"; ?>
 
     <h1 align="center">ERRO</h1>
     <div align="center">

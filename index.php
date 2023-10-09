@@ -2,10 +2,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include "views/head.php"; ?>
+<?php include "Views/head.php"; ?>
 
 <body>
-    <?php include "views/menu.php"; ?>
+    <?php include "Views/menu.php"; ?>
     <h1 align="center">FUNCIONARIO MANAGER!</h1>
 
     <div style="display: flex; justify-content: center; align-items: flex-start; height: 100vh;">

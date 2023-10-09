@@ -29,7 +29,7 @@ class Application
         $this->loadRoute();
 
         //verificando se o arquivo de controle existe
-        $controller_file = 'controllers/' . $this->controller . 'Controller.php';
+        $controller_file = 'Controllers/' . $this->controller . 'Controller.php';
         if (file_exists($controller_file))
             require_once $controller_file;
         else {
